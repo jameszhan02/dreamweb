@@ -27,3 +27,6 @@ To Run back end node.js (nodemon in script)
 
 ## to test API (PostMan)
 -  [PostMan DownLoad](https://www.postman.com/downloads/)
+
+## During Dev
+- EVERYONE NEED TO CREATE NEW BRANCH FOR PUSH BEFORE MERGE INTO MASTER
