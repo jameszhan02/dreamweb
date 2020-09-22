@@ -26,4 +26,4 @@ To Run back end node.js (nodemon in script)
 - page layout (2020/SEP/22)
 
 ## to test API (PostMan)
--  [https://www.postman.com/downloads/](Postman)
+-  [PostMan DownLoad](https://www.postman.com/downloads/)
