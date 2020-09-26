@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const devBaseURL = 'http://localhost:8888/';
+const devBaseURL = 'http://localhost:8080/';
 //const prodBaseURL = 'tbd';
 
 let baseURL = devBaseURL;

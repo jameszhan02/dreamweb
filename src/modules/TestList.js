@@ -13,8 +13,8 @@ const  TestMoudleMemberList= () => {
         setMemberList(memberList);
       });
     }, []);
-//   console.log(memberList);
-    const mList = memberList.map((m) => <li key={m.full_name}>{m.full_name}</li>);
+  // console.log(memberList);
+    const mList = memberList.map((m) => <li key={m.fullName}>{m.fullName}</li>);
     return(
         <div>
         {mList}
