@@ -4,7 +4,7 @@ const mysql = require('mysql2');
 var pool = mysql.createPool({
     host: process.env.DB_HOST, //127.0.0.1 by mySQL default
     user: process.env.DB_USER, //root
-    password: process.env.DB_PASSWORD, //dreamweb2020
+    password: process.env.DB_PASSWORD, //dreamWeb2020
     database: process.env.DB_DATABASE, //cndb_main
     waitForConnections: true, // Default value.
     queueLimit: 0, // Unlimited - default value.
