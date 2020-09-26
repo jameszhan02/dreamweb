@@ -23,6 +23,10 @@ To Run back end node.js (nodemon in script)
 - mySQl
 - "api/db"(To run sql query to install the database, create a schema call 'cndb_main')
 - HOST, USER, PASSWORD, AND DB NAME IN DOTENV FILE(EVERYONE KEEP SAME FOR NOW)
+```
+user: Root
+Password: dreamWeb2020
+```
 ---
 
 ## TO DO
