@@ -26,6 +26,7 @@ To Run back end node.js (nodemon in script)
 ```
 user: Root
 Password: dreamWeb2020
+db: cndb_main
 ```
 ---
 
