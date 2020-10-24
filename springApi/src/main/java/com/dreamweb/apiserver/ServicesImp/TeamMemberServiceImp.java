@@ -4,7 +4,9 @@ import com.dreamweb.apiserver.Entities.TeamMemberEntity;
 import com.dreamweb.apiserver.Repositories.TeamMemberRepository;
 import com.dreamweb.apiserver.Services.TeamMemberService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class TeamMemberServiceImp implements TeamMemberService {
     @Autowired
     TeamMemberRepository teamMemberRepository;
