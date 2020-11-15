@@ -8,6 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Axios from 'axios';
+import jwtAxios from "../axios";
 
 
 function Copyright() {
@@ -62,7 +63,9 @@ const onPSChange = (e) => {
 }
 
 const handleSignUp = async () => {
-  const res = await Axios.post('http://localhost:8080/', { email: state.email, password: state.password});
+  let user = {email: state.email, password: state.password}
+  // const res = await Axios.post('http://localhost:8080/user/signup', user);
+  return await jwtAxios.post(`/user/signup`,user)
   };
 
   return (
