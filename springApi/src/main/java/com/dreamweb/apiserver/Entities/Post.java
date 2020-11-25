@@ -18,6 +18,9 @@ public class Post {
     private String postText;
     private long postUser;
     private Date postDate;
+    @Lob
+    @Basic(optional = true)
+    private String postContent;
 
     @Lob
     @Basic(optional = true)
