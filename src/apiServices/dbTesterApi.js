@@ -5,3 +5,10 @@ export const listMembersTest = () => {
       return resp.data;
     });
 };
+
+export const listPost = () => {
+  return jwtAxios.get(`/post/getall`).then((resp) => {
+    console.log(resp.data);
+    return resp.data;
+  });
+};

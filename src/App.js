@@ -1,14 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import TestList from './modules/TestList';
+import Navbar from './modules/Navbar'
 import SignUp from './modules/signup'
+import PostList from './modules/PostList'
 
-const App =() => {
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+const App = () => {
   return (
-    <div className="App">
-        <SignUp></SignUp>
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar></Navbar>
+        <Switch>
+          <Route path="/login" component={SignUp}></Route>
+          <Route path="/postlist" component={PostList}></Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 

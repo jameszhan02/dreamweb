@@ -9,8 +9,8 @@ const MenuItems = [
     cName: "nav-links",
   },
   {
-    title: "Guides",
-    url: "#",
+    title: "Posts",
+    url: "postlist",
     cName: "nav-links",
   },
   {
@@ -25,7 +25,7 @@ const MenuItems = [
   },
   {
     title: "Login",
-    url: "#",
+    url: "login",
     cName: "nav-links",
   },
 ];

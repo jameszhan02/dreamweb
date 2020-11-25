@@ -2,7 +2,6 @@ package com.dreamweb.apiserver.Controllers;
 
 
 import com.dreamweb.apiserver.Entities.TeamMemberEntity;
-import com.dreamweb.apiserver.Repositories.TeamMemberRepository;
 import com.dreamweb.apiserver.Services.TeamMemberService;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;

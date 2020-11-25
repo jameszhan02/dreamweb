@@ -17,9 +17,6 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(path="/user")
 @Api(value = "user Controller")
 public class UserController  {
-    //
-//    @Autowired
-//    TeamMemberRepository teamMemberRepository;
     @Autowired
     private UserRepository userRepository;
 
