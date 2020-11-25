@@ -1,0 +1,28 @@
+.NavbarItems {
+  background-color: dodgerblue;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.nav-menu {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  list-style: none;
+  text-align: center;
+  justify-content: end;
+  margin-right: 2rem;
+  width: 70vw;
+  grid-gap: 20px;
+}
+
+.nav-links {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links:hover {
+  color: black;
+}
