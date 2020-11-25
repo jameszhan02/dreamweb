@@ -1,6 +1,6 @@
 .NavbarItems {
-  background-color: dodgerblue;
-  height: 80px;
+  background-color: #2196f3;
+  height: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,12 +14,12 @@
   text-align: center;
   justify-content: end;
   margin-right: 2rem;
-  width: 70vw;
+  width: 50vw;
   grid-gap: 20px;
 }
 
 .nav-links {
-  color: white;
+  color: #fafafa;
   text-decoration: none;
 }
 

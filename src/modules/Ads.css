@@ -1,0 +1,20 @@
+.list {
+  width: 15%;
+  padding: 10px;
+  margin-left: 10%;
+}
+
+.adsrow {
+  align-items: center;
+  margin: 4px auto;
+  padding: 16px;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  width: 90%;
+}
+
+.adscontent {
+  font-size: 1rem;
+  padding: 2px;
+}

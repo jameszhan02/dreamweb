@@ -1,8 +1,25 @@
 import React, { Component } from "react";
 import "./Navbar.css";
+import Search from "./search";
+
 const MenuItems = [
   {
     title: "Home",
+    url: "#",
+    cName: "nav-links",
+  },
+  {
+    title: "Guides",
+    url: "#",
+    cName: "nav-links",
+  },
+  {
+    title: "Store",
+    url: "#",
+    cName: "nav-links",
+  },
+  {
+    title: "About Us",
     url: "#",
     cName: "nav-links",
   },
@@ -28,6 +45,7 @@ class Navbar extends Component {
             );
           })}
         </ul>
+        <Search />
       </nav>
     );
   }
