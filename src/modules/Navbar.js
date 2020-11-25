@@ -5,7 +5,7 @@ import Search from "./search";
 const MenuItems = [
   {
     title: "Home",
-    url: "#",
+    url: "home",
     cName: "nav-links",
   },
   {
@@ -20,7 +20,7 @@ const MenuItems = [
   },
   {
     title: "About Us",
-    url: "#",
+    url: "aboutus",
     cName: "nav-links",
   },
   {

@@ -1,4 +1,6 @@
 .App {
+  width: 95%;
+  margin: auto;
   text-align: center;
 }
 
@@ -24,6 +26,9 @@
   color: white;
 }
 
+.contentWrap{
+  width: 90%;
+}
 .App-link {
   color: #61dafb;
 }
