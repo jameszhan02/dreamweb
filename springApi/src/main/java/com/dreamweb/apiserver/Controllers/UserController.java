@@ -35,16 +35,13 @@ public class UserController  {
 
     @PostMapping(path = "/signin")
     @ResponseBody
-    public Boolean SignIn(@RequestBody User user){
+    public User SignIn(@RequestBody User user){
         Boolean res = false;
         String email = user.getEmail();
         String password = user.getPassword();
         User returnUser = userRepository.findTopByEmailAndPassword(email,password);
-        if(returnUser != null){
-            res = true;
-        }
-        System.out.println(res);
-        return res;
+        
+        return returnUser;
     }
 
 

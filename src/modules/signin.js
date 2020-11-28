@@ -9,6 +9,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import jwtAxios from "../axios";
 import {useHistory} from 'react-router-dom';
+import {onLogin, loginUser } from '../cookieHelper'
 
 function Copyright() {
   return (
@@ -22,6 +23,7 @@ function Copyright() {
     </Typography>
   );
 }
+
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -54,6 +56,7 @@ export default function TestMoudleMemberList() {
   const initialState = {
     email: "",
     password: "",
+    logInSuccess: true
   };
 
   const reducer = (state, newState) => ({ ...state, ...newState });
@@ -73,8 +76,17 @@ export default function TestMoudleMemberList() {
 
   const handleSignIn = async () => {
       let user = { email: state.email, password: state.password }
-      return await jwtAxios.post(`/user/signup`, user)
-  };
+      let returnUser = await jwtAxios.post(`/user/signup`, user);
+      if(returnUser != null){
+        setState({ logInSuccess: false, status: "" });
+      }
+      //put login user info in to the 
+      if(state.logInSuccess){
+        onLogin(returnUser);
+      }
+
+      console.log(loginUser());
+  }
 
   return (
     <Container component="main" maxWidth="xs">
