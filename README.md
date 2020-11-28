@@ -10,13 +10,7 @@ The page will reload if you make edits.<br />
 
 ## `Spring Boot back end`
 Default HOST in http://localhost:8080   || RUN SpringApi Folder in IDEA
-## `Express back end`
-- `cd api`
-<br>
 
-- `npm run dev` 
-<br>
-To Run back end node.js (nodemon in script)
 ---
 
 ## DataBase
@@ -33,8 +27,8 @@ db: cndb_main
 ## TO DO
 - page layout (2020/SEP/22)
 
-## to test API (PostMan)
--  [PostMan DownLoad](https://www.postman.com/downloads/)
+## to test API (Swagger2)
+- [Swagger API](http://localhost:8080/swagger-ui.html)
 
 ## During Dev
 - EVERYONE NEED TO CREATE NEW BRANCH FOR PUSH BEFORE MERGE INTO MASTER
