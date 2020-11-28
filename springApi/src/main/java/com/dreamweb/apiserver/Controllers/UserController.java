@@ -28,5 +28,12 @@ public class UserController  {
        return res;
     }
 
+    @PostMapping(path = "/signin")
+    @ResponseBody
+    public User SignIn(@RequestBody User user){
+        User res =  new User();
+        return res;
+    }
+
 
 }

@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import jwtAxios from "../axios";
-import Alert from '@material-ui/lab/Alert';
+import {useHistory} from 'react-router-dom';
 
 function Copyright() {
   return (
@@ -40,17 +40,20 @@ const useStyles = makeStyles((theme) => ({
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
+  },
+  signup: {
+    position: 'relative',
+    float: 'right',
   }
 }));
 
 export default function TestMoudleMemberList() {
   const classes = useStyles();
+  const history = useHistory();
 
   const initialState = {
     email: "",
     password: "",
-    rePassword: "",
-    isMatch: false
   };
 
   const reducer = (state, newState) => ({ ...state, ...newState });
@@ -62,33 +65,21 @@ export default function TestMoudleMemberList() {
   const onPSChange = (e) => {
     setState({ password: e.target.value, status: "" });
   }
-  const onREPSChange = (e) => {
-    setState({ rePassword: e.target.value, status: "" });
+  const signup = () => {
+    history.push('/signup');
+    return history;
   }
 
 
-  const handleSignUp = async () => {
-    if (state.password != state.rePassword) {
-      // alert.show('Confirm password martch!');
-      setState({ isMatch: true, status: "" });
-      // console.log("LMAO");
-    } else {
-      setState({ isMatch: false, status: "" });
+  const handleSignIn = async () => {
       let user = { email: state.email, password: state.password }
       return await jwtAxios.post(`/user/signup`, user)
-    }
   };
 
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <br/>
-      <div>
-        {state.isMatch
-        ? <Alert severity="error">Please make sure re-enter password match!!</Alert>
-        : <br/>
-        }
-      </div>
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
           {/* <LockOutlinedIcon /> */}
@@ -123,28 +114,18 @@ export default function TestMoudleMemberList() {
             onChange={onPSChange}
             value={state.password}
           />
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            name="password"
-            label="Password"
-            type="password"
-            id="password"
-            autoComplete="current-password"
-            onChange={onREPSChange}
-            value={state.rePassword}
-          />
           <Button
             fullWidth
             variant="contained"
             color="primary"
             className={classes.submit}
-            onClick={() => handleSignUp()}
+            onClick={() => handleSignIn()}
           >
-            Sign Up
+            Sign in
           </Button>
+          <div className={classes.signup} onClick={signup}>
+              Sign Up Now
+          </div>
         </form>
       </div>
     </Container>
