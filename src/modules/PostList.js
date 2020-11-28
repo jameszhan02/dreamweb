@@ -1,4 +1,4 @@
-import React, { useEffect, useState ,Component } from "react";
+import React, { useEffect, useState  } from "react";
 import Axios from 'axios';
 import {listPost} from '../apiServices/dbTesterApi';
 import "./Post.css";
