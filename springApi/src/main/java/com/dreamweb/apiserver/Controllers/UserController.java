@@ -7,20 +7,25 @@ import com.dreamweb.apiserver.Repositories.TeamMemberRepository;
 import com.dreamweb.apiserver.Repositories.UserRepository;
 import com.dreamweb.apiserver.Services.TeamMemberService;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 
 @Controller
 @CrossOrigin
 @RequestMapping(path="/user")
-@Api(value = "user Controller")
+@Api(tags  = "用户相关接口")
 public class UserController  {
     @Autowired
     private UserRepository userRepository;
 
+
     @PostMapping(path = "/signup")
+    @ApiOperation("添加注册用户的接口")
     @ResponseBody
     public User Save(@RequestBody User user){
 //        System.out.println(user);
@@ -30,8 +35,15 @@ public class UserController  {
 
     @PostMapping(path = "/signin")
     @ResponseBody
-    public User SignIn(@RequestBody User user){
-        User res =  new User();
+    public Boolean SignIn(@RequestBody User user){
+        Boolean res = false;
+        String email = user.getEmail();
+        String password = user.getPassword();
+        User returnUser = userRepository.findTopByEmailAndPassword(email,password);
+        if(returnUser != null){
+            res = true;
+        }
+        System.out.println(res);
         return res;
     }
 
