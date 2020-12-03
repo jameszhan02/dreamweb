@@ -1,5 +1,4 @@
 .App {
-  width: 95%;
   margin: auto;
   text-align: center;
 }
@@ -26,7 +25,7 @@
   color: white;
 }
 
-.contentWrap{
+.contentWrap {
   width: 90%;
 }
 .App-link {
@@ -42,8 +41,7 @@
   }
 }
 
-
-.container{
+.container {
   position: fixed;
   background-position-x: center;
   background-position-y: center;
@@ -51,5 +49,5 @@
   width: 100%;
   height: 100%;
   background-size: cover;
-  background-image: url('./img/bgpic.jpg');
+  background-image: url("./img/bgpic.jpg");
 }

@@ -1,34 +1,14 @@
 .post-container {
-  position: relative;
+  margin: auto;
   width: 60%;
   padding: 10px;
-  margin-left: 5%;
 }
 
-.post-row {
-  align-items: center;
-  margin: 4px auto;
+.post {
   color: black;
-  background-color: #e8eaf6;
+  background-color: #fafafa;
   padding: 16px;
   border-radius: 5px;
-  width: 90%;
-}
-
-.post-user {
-  font-size: 0.9rem;
-}
-.post-date {
-  font-size: 0.7rem;
-  margin-bottom: 10px;
-}
-
-.post-title {
-  font-size: 1.1rem;
-  padding: 2px;
-}
-
-.post-content {
-  font-size: 1rem;
-  padding: 2px;
+  width: 70%;
+  margin-bottom: 2%;
 }
