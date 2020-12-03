@@ -11,7 +11,8 @@ import java.util.Date;
 @Table(name ="post")
 @RequiredArgsConstructor
 public class Post {
-    @javax.persistence.Id
+
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long Id;
     private String postTitle;

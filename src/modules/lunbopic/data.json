@@ -1,0 +1,19 @@
+{"imgArray": [
+    "https://k9h2z2w9.stackpathcdn.com/wp-content/uploads/Property-Rent-Bricks-NBS-750x375.jpg",
+    "https://alltechasia.com/wp-content/uploads/2017/12/SecondHand.jpeg",
+    "https://i3.cpcache.com/merchandise/208_550x550_Front_Color-NA.jpg?AttributeValue=NA&c=True&OrientationNo=1&region={%22name%22:%22FrontCenter%22,%22width%22:25,%22height%22:25,%22alignment%22:%22MiddleCenter%22,%22orientation%22:1,%22dpi%22:100,%22crop_x%22:0,%22crop_y%22:0,%22crop_h%22:2500,%22crop_w%22:2500,%22scale%22:0,%22template%22:{%22id%22:96072396,%22params%22:{}}}"
+],
+"linkArray": [
+    "./postlist",
+    "./store",
+    "./postlist"
+],
+"lunboObject": {
+    "interval": 1000,
+    "direction": "right",
+    "number": 3,
+    "boxStyle": "content",
+    "imgWidth": 550,
+    "imgHeight": 350
+}
+}
