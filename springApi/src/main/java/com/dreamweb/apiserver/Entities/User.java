@@ -9,7 +9,8 @@ import javax.persistence.*;
 @Table(name ="user")
 @RequiredArgsConstructor
 public class User {
-    @javax.persistence.Id
+
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long Id;
     private String email;

@@ -1,7 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 import 'antd/dist/antd.css';
-import { Carousel, Statistic, Row, Col, Button } from 'antd';
+import { Carousel, Statistic, Row, Col } from 'antd';
 import { LikeOutlined } from '@ant-design/icons';
 import styles from '../styles/card.module.css'
 var LunBoComponent = require('./lunbopic/lunbo.jsx');

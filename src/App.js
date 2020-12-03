@@ -2,10 +2,11 @@ import React from 'react';
 import './App.css';
 import Navbar from './modules/Navbar'
 import SignUp from './modules/signup'
+import SignIn from './modules/signin'
 import PostList from './modules/PostList'
 import NewPost from './modules/NewPost'
 import AboutUs from './modules/AboutUs'
-import Home from './Home' 
+import Home from './modules/Home' 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 const App = () => {
@@ -14,7 +15,8 @@ const App = () => {
       <div className="App">
         <Navbar></Navbar>
         <Switch className="contentWrap">
-          <Route path="/login" component={SignUp}></Route>
+          <Route path="/signup" component={SignUp}></Route>
+          <Route path="/login" component={SignIn}></Route>
           <Route path="/postlist" component={PostList}></Route>
           <Route path="/home" component={Home}></Route>
           <Route path="/newpost" component={NewPost}></Route>

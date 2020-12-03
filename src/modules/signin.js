@@ -8,8 +8,8 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import jwtAxios from "../axios";
-import Alert from '@material-ui/lab/Alert';
 import {useHistory} from 'react-router-dom';
+import {onLogin, loginUser } from '../cookieHelper'
 
 // function Copyright() {
 //   return (
@@ -23,6 +23,7 @@ import {useHistory} from 'react-router-dom';
 //     </Typography>
 //   );
 // }
+
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -56,8 +57,7 @@ export default function TestMoudleMemberList() {
   const initialState = {
     email: "",
     password: "",
-    rePassword: "",
-    isMatch: false
+    logInSuccess: true
   };
 
   const reducer = (state, newState) => ({ ...state, ...newState });
@@ -69,44 +69,36 @@ export default function TestMoudleMemberList() {
   const onPSChange = (e) => {
     setState({ password: e.target.value, status: "" });
   }
-  const onREPSChange = (e) => {
-    setState({ rePassword: e.target.value, status: "" });
-  }
-
-  const backToSignin = () => {
-    history.push('/login');
+  const signup = () => {
+    history.push('/signup');
     return history;
   }
 
 
-  const handleSignUp = async () => {
-    if (state.password !== state.rePassword) {
-      // alert.show('Confirm password martch!');
-      setState({ isMatch: true, status: "" });
-      // console.log("LMAO");
-    } else {
-      setState({ isMatch: false, status: "" });
+  const handleSignIn = async () => {
       let user = { email: state.email, password: state.password }
-      return await jwtAxios.post(`/user/signup`, user)
-    }
-  };
+      let returnUser = await jwtAxios.post(`/user/signup`, user);
+      if(returnUser != null){
+        setState({ logInSuccess: false, status: "" });
+      }
+      //put login user info in to the 
+      if(state.logInSuccess){
+        onLogin(returnUser);
+      }
+
+      console.log(loginUser());
+  }
 
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <br/>
-      <div>
-        {state.isMatch
-        ? <Alert severity="error">Please make sure re-enter password match!!</Alert>
-        : <br/>
-        }
-      </div>
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
           {/* <LockOutlinedIcon /> */}
         </Avatar>
         <Typography component="h1" variant="h5">
-          Sign Up
+          Sign in
         </Typography>
         <form className={classes.form} noValidate>
           <TextField
@@ -135,30 +127,17 @@ export default function TestMoudleMemberList() {
             onChange={onPSChange}
             value={state.password}
           />
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            name="password"
-            label="Password"
-            type="password"
-            id="password"
-            autoComplete="current-password"
-            onChange={onREPSChange}
-            value={state.rePassword}
-          />
           <Button
             fullWidth
             variant="contained"
             color="primary"
             className={classes.submit}
-            onClick={() => handleSignUp()}
+            onClick={() => handleSignIn()}
           >
-            Sign Up
+            Sign in
           </Button>
-          <div className={classes.signup} href="/login" onClick={backToSignin} >
-              Already have an account? Back to Log in
+          <div className={classes.signup} onClick={signup}>
+              Sign Up Now
           </div>
         </form>
       </div>
