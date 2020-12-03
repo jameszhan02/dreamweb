@@ -46,6 +46,7 @@ const useStyles = makeStyles((theme) => ({
   signup: {
     position: 'relative',
     float: 'right',
+    cursor: 'pointer'
   }
 }));
 

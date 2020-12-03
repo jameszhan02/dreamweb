@@ -12,6 +12,7 @@
     "@testing-library/user-event": "^7.2.1",
     "antd": "^4.8.5",
     "axios": "^0.20.0",
+    "bootstrap": "^4.5.3",
     "customize-cra": "^1.0.0",
     "enquire-js": "^0.2.1",
     "less": "^3.12.2",

@@ -9,6 +9,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import jwtAxios from "../axios";
 import Alert from '@material-ui/lab/Alert';
+import {useHistory} from 'react-router-dom';
 
 // function Copyright() {
 //   return (
@@ -40,11 +41,17 @@ const useStyles = makeStyles((theme) => ({
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
+  },
+  signup: {
+    position: 'relative',
+    float: 'right',
+    cursor: 'pointer'
   }
 }));
 
 export default function TestMoudleMemberList() {
   const classes = useStyles();
+  const history = useHistory();
 
   const initialState = {
     email: "",
@@ -64,6 +71,11 @@ export default function TestMoudleMemberList() {
   }
   const onREPSChange = (e) => {
     setState({ rePassword: e.target.value, status: "" });
+  }
+
+  const backToSignin = () => {
+    history.push('/login');
+    return history;
   }
 
 
@@ -94,7 +106,7 @@ export default function TestMoudleMemberList() {
           {/* <LockOutlinedIcon /> */}
         </Avatar>
         <Typography component="h1" variant="h5">
-          Sign in
+          Sign Up
         </Typography>
         <form className={classes.form} noValidate>
           <TextField
@@ -145,6 +157,9 @@ export default function TestMoudleMemberList() {
           >
             Sign Up
           </Button>
+          <div className={classes.signup} href="/login" onClick={backToSignin} >
+              Already have an account? Back to Log in
+          </div>
         </form>
       </div>
     </Container>

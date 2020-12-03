@@ -4,21 +4,19 @@ import React from 'react';
 import { enquireScreen } from 'enquire-js';
 
 import Banner0 from './Banner0';
-import Nav0 from './Nav0';
 import Content0 from './Content0';
-import Content1 from './Content1';
-import Content3 from './Content3';
-import Footer0 from './Footer0';
+import Feature0 from './Feature0';
 
 import {
   Banner00DataSource,
-  Nav00DataSource,
   Content00DataSource,
-  Content10DataSource,
-  Content30DataSource,
-  Footer00DataSource,
+  Feature00DataSource,
 } from './data.source';
 import './less/antMotionStyle.less';
+
+import Search from '../search.js';
+import CategoryComponent from '../category';
+
 
 let isMobile;
 enquireScreen((b) => {
@@ -62,34 +60,18 @@ export default class Home extends React.Component {
         dataSource={Banner00DataSource}
         isMobile={this.state.isMobile}
       />,
-      <Nav0
-        id="Nav0_0"
-        key="Nav0_0"
-        dataSource={Nav00DataSource}
-        isMobile={this.state.isMobile}
-      />,
+      <Search />,
+      <CategoryComponent />,
       <Content0
         id="Content0_0"
         key="Content0_0"
         dataSource={Content00DataSource}
         isMobile={this.state.isMobile}
       />,
-      <Content1
-        id="Content1_0"
-        key="Content1_0"
-        dataSource={Content10DataSource}
-        isMobile={this.state.isMobile}
-      />,
-      <Content3
-        id="Content3_0"
-        key="Content3_0"
-        dataSource={Content30DataSource}
-        isMobile={this.state.isMobile}
-      />,
-      <Footer0
-        id="Footer0_0"
-        key="Footer0_0"
-        dataSource={Footer00DataSource}
+      <Feature0
+        id="Feature0_0"
+        key="Feature0_0"
+        dataSource={Feature00DataSource}
         isMobile={this.state.isMobile}
       />,
     ];
