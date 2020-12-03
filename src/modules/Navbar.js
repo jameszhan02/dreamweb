@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./Navbar.css";
-import Search from "./search";
 
 const MenuItems = [
   {
@@ -45,7 +44,7 @@ class Navbar extends Component {
             );
           })}
         </ul>
-        <Search />
+        
       </nav>
     );
   }
