@@ -9,6 +9,11 @@
   background-color: #fafafa;
   padding: 16px;
   border-radius: 5px;
-  width: 70%;
   margin-bottom: 2%;
+}
+
+.viewpost {
+  margin: auto;
+  width: 70%;
+  padding: 10px;
 }

@@ -6,8 +6,9 @@ import TextField from "@material-ui/core/TextField";
 import Card from "@material-ui/core/Card";
 import Typography from "@material-ui/core/Typography";
 import { useHistory } from "react-router-dom";
+import { Button, CardActions } from "@material-ui/core";
 
-const Post = () => {
+const PostList = () => {
   //get data
   const history = useHistory();
   const [postlist, setPostlist] = useState([]);
@@ -23,9 +24,13 @@ const Post = () => {
     history.push("/newpost");
     return history;
   };
+  const viewPost = (id) => {
+    history.push("/viewpost/" + id, id);
+    return history;
+  };
   return (
     <div className="post-container">
-      <Card style={{ width: "70%" }}>
+      <Card style={{ width: "60%" }}>
         <TextField
           id="outlined-basic"
           label="Create a new post"
@@ -38,33 +43,40 @@ const Post = () => {
         />
       </Card>
       <br />
-      <br />
       {postlist.map((item, index) => {
         console.log(item.postImg);
         return (
-          <div key={index}>
+          <Card className="post" style={{ width: "60%" }} key={index}>
             <Typography
               variant="caption"
               display="block"
               align="left"
               gutterBottom
             >
-              {item.postUser} {item.postDate}
+              {item.postUser} {Date(item.postDate)}
             </Typography>
             <Typography variant="h6" align="left" color="primary">
               {item.postTitle}
             </Typography>
-            <div dangerouslySetInnerHTML={{ __html: item.postText }} />
-            <img
-              src={item.postImg}
-              alt={item.postImgalt}
-              style={{ width: "100%" }}
-            />
-          </div>
+            <Typography variant="body1" align="left">
+              {item.postText}
+            </Typography>
+            <CardActions>
+              <Button
+                variant="contained"
+                size="small"
+                color="primary"
+                style={{ marginLeft: "auto" }}
+                onClick={() => viewPost(item.id)}
+              >
+                View
+              </Button>
+            </CardActions>
+          </Card>
         );
       })}
     </div>
   );
 };
 
-export default Post;
+export default PostList;
