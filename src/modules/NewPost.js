@@ -13,6 +13,7 @@ import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import jwtAxios from "../axios";
 import { useHistory } from "react-router-dom";
+import { loginUser } from "../cookieHelper/index";
 
 //MUST START WITH capital letter  (link below)
 //https://dev.to/ranewallin/js-bites-react-hook-is-called-in-a-function-which-is-neither-a-react-function-or-sic-a-custom-react-hook-1g2c
@@ -38,7 +39,7 @@ const NewPost = () => {
     let post = {
       postTitle: title,
       postText: desc,
-      postUser: 1,
+      postUser: loginUser().data.id,
       postDate: Date.now(),
       postContent: content,
       postImgalt: `${title}img`,

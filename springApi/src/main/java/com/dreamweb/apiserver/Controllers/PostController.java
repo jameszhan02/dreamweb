@@ -3,6 +3,8 @@ import com.dreamweb.apiserver.Entities.Post;
 import com.dreamweb.apiserver.Repositories.PostRepository;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -33,6 +35,11 @@ public class PostController {
     @ResponseBody
     public Optional<Post> findById(@PathVariable long id){
         return postRepository.findById(id);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteOne(@PathVariable long id) {
+        postRepository.deleteById(id);
     }
 
 }

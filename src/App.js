@@ -21,7 +21,7 @@ const App = () => {
           <Route path="/signup" component={SignUp}></Route>
           <Route path="/login" component={SignIn}></Route>
           <Route path="/postlist" component={PostList}></Route>
-          <Route path="/viewpost/:id" component={Post}></Route>
+          <Route path="/post:id" component={Post}></Route>
           <Route path="/home" component={Home}></Route>
           <Route path="/newpost" component={NewPost}></Route>
           <Route path="/aboutus" component={AboutUs}></Route>          

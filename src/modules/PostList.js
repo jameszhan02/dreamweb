@@ -1,32 +1,46 @@
 import React, { useEffect, useState } from "react";
 import Axios from "axios";
-import { listPost } from "../apiServices/dbTesterApi";
+import { listPost, getUser } from "../apiServices/dbTesterApi";
 import "./Post.css";
 import TextField from "@material-ui/core/TextField";
 import Card from "@material-ui/core/Card";
 import Typography from "@material-ui/core/Typography";
 import { useHistory } from "react-router-dom";
 import { Button, CardActions } from "@material-ui/core";
+import { loginUser } from "../cookieHelper/index";
 
 const PostList = () => {
   //get data
   const history = useHistory();
   const [postlist, setPostlist] = useState([]);
+  const [userlist, setUserlist] = useState([]);
   useEffect(() => {
     Axios.all([listPost()]).then(([postlist]) => {
       setPostlist(postlist);
     });
+    Axios.all([getUser()]).then(([userlist]) => {
+      setUserlist(userlist);
+    });
   }, []);
 
-  console.log(postlist);
+  //console.log(postlist);
 
   const newPost = () => {
-    history.push("/newpost");
-    return history;
+    var userData = loginUser();
+    if (userData !== null) {
+      history.push("/newpost");
+      return history;
+    } else {
+      history.push("/login");
+      return history;
+    }
   };
   const viewPost = (id) => {
-    history.push("/viewpost/" + id, id);
+    history.push("/post" + id, id);
     return history;
+  };
+  const formatDate = (date) => {
+    return new Date(date).toString();
   };
   return (
     <div className="post-container">
@@ -44,7 +58,6 @@ const PostList = () => {
       </Card>
       <br />
       {postlist.map((item, index) => {
-        console.log(item.postImg);
         return (
           <Card className="post" style={{ width: "60%" }} key={index}>
             <Typography
@@ -53,7 +66,7 @@ const PostList = () => {
               align="left"
               gutterBottom
             >
-              {item.postUser} {Date(item.postDate)}
+              {formatDate(item.postDate)}
             </Typography>
             <Typography variant="h6" align="left" color="primary">
               {item.postTitle}
