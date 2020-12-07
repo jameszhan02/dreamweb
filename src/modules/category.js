@@ -111,7 +111,7 @@ const CategoryComponent = (props) => {
         <Grid item xs={12} sm={4}>
           <div className={classes.container}>
             <Paper className={classes.paperA} />
-            <Link to={`/path/${""}`}>
+            <Link to={`/postlist/${""}`}>
               <div className={classes.centertextL}>Apartemnt For Rent</div>
             </Link>
           </div>
@@ -119,7 +119,7 @@ const CategoryComponent = (props) => {
         <Grid item xs={12} sm={4}>
           <div className={classes.container}>
             <Paper className={classes.paperC} />
-            <Link to={`/path/${""}`}>
+            <Link to={`/postlist/${""}`}>
               <div className={classes.centertextMR}>Cars And Truks</div>
             </Link>
           </div>
@@ -127,7 +127,7 @@ const CategoryComponent = (props) => {
         <Grid item xs={12} sm={4}>
           <div className={classes.container}>
             <Paper className={classes.paperF} />
-            <Link to={`/path/${""}`}>
+            <Link to={`/postlist/${""}`}>
               <div className={classes.centertextMR}>Furnature</div>
             </Link>
           </div>
