@@ -22,7 +22,7 @@ export const Banner00DataSource = {
       </span>
     ),
   },
-  button: { className: 'banner0-button', children: 'Learn More' },
+  button: { className: 'banner0-button', children: <a href="https://www.lexus.ca/lexus/en" target="_blank">Learn More</a>},
 };
 export const Content00DataSource = {
   wrapper: { className: 'home-page-wrapper content0-wrapper' },
@@ -35,7 +35,7 @@ export const Content00DataSource = {
         name: 'title',
         children: (
           <span>
-            <p>What's popular right now</p>
+            <p>Explore</p>
           </span>
         ),
         className: 'ki50b1ra0mh-editor_css',
@@ -85,7 +85,7 @@ export const Content00DataSource = {
             {
               name: 'title',
               className: 'content0-block-title',
-              children: <a href = "mailto: abc@example.com">Send Email</a>,
+              children: <a href = "mailto: ChineseGang@gmail.com">Send Email</a>,
             },
           ],
         },

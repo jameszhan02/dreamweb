@@ -59,7 +59,7 @@ class Navbar extends Component {
         </ul>
         <div className="iconBorder">
         {isUserLogin
-        ? <Avatar  className="personIcon"  alt={currentUser.data.email} src="/broken-image.jpg" style={{marginTop: '5%'}}  onClick={curUserDetail}/>
+        ? <Avatar  className="personIcon"  alt={currentUser.data.email} src="/broken-image.jpg"  onClick={curUserDetail}/>
         : <img className="personIcon" src="https://user-images.githubusercontent.com/45243472/101384466-7be14280-3888-11eb-9e05-4efe863e4072.jpg" alt="defaultPic"/>
         }
         </div>

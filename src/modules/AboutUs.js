@@ -65,7 +65,7 @@ const AboutUs = () => {
             <div className={styles.aboutUsFooter}>
                 <div>Contact Us At</div>
                 <div >
-                <a href="https://mail.google.com/mail/u/0/#inbox?compose=new" className={styles.aboutUsImg}><img src="../static/gmail.png" width="30px" height="30px"/></a> 
+                <a href = "mailto: ChineseGang@gmail.com" className={styles.aboutUsImg}><img src="../static/gmail.png" width="30px" height="30px"/></a> 
                 <a href="https://www.facebook.com/tianyi.ma.10" className={styles.aboutUsImg}><img src="../static/facebook.png" width="30px" height="30px"/></a> 
                 <a href="https://wx.qq.com/" className={styles.aboutUsImg}><img src="../static/wechat.png" width="30px" height="30px"/></a> 
                 </div>
