@@ -23,11 +23,16 @@ img {
     width: 100%;
     height: 70px;
 }
+
+.aboutusmid{
+    text-align: center;
+}
 .aboutUsFooter{
     background-color: #2196f3;
     width: 100%;
     height: 70px;
     font-size: x-large;
+    text-align: center;
 }
 .aboutUsImg{  
     padding-left: 30px;
