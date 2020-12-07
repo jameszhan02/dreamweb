@@ -19,14 +19,14 @@ import java.util.Optional;
 @Controller
 @CrossOrigin
 @RequestMapping(path="/user")
-@Api(tags  = "用户相关接口")
+@Api(tags  = "user about APIs")
 public class UserController  {
     @Autowired
     private UserRepository userRepository;
 
 
     @PostMapping(path = "/signup")
-    @ApiOperation("添加注册用户的接口")
+    @ApiOperation("add a new user")
     @ResponseBody
     public User Save(@RequestBody User user){
 //        System.out.println(user);

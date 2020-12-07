@@ -10,6 +10,7 @@ import AboutUs from "./modules/AboutUs";
 import Home from "./modules/Home";
 import About from './modules/about';
 import Policy from './modules/policy';
+import UserDetail from './modules/userProfile';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 const App = () => {
@@ -27,6 +28,7 @@ const App = () => {
           <Route path="/aboutus" component={AboutUs}></Route>          
           <Route path="/about" component={About}></Route>
           <Route path="/policy" component={Policy}></Route>
+          <Route path="/userdetail" component={UserDetail}></Route>
           <Route path="/" component={Home}></Route>
         </Switch>
       </div>

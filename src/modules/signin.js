@@ -79,12 +79,13 @@ export default function TestMoudleMemberList() {
   const handleSignIn = async () => {
       let user = { email: state.email, password: state.password }
       let returnUser = await jwtAxios.post(`/user/signin`, user);
-      if(returnUser != null){
+      if(returnUser.data != '' ){
         console.log("login Success!");
         setState({ logInSuccess: false, status: "" });
       }
       //put login user info in to the 
       if(state.logInSuccess){
+        console.log(returnUser);
         onLogin(returnUser);
       }
   }
