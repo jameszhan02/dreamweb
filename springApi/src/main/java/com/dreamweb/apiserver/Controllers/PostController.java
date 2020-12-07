@@ -1,13 +1,14 @@
 package com.dreamweb.apiserver.Controllers;
 import com.dreamweb.apiserver.Entities.Post;
-import com.dreamweb.apiserver.Entities.TeamMemberEntity;
-import com.dreamweb.apiserver.Entities.User;
 import com.dreamweb.apiserver.Repositories.PostRepository;
-import com.dreamweb.apiserver.Repositories.UserRepository;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @Controller
 @CrossOrigin
@@ -30,6 +31,15 @@ public class PostController {
         return res;
     }
 
+    @GetMapping(path = "/{id}")
+    @ResponseBody
+    public Optional<Post> findById(@PathVariable long id){
+        return postRepository.findById(id);
+    }
 
+    @DeleteMapping("/{id}")
+    public void deleteOne(@PathVariable long id) {
+        postRepository.deleteById(id);
+    }
 
 }

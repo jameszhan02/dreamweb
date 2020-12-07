@@ -1,6 +1,7 @@
 package com.dreamweb.apiserver.Controllers;
 
 
+import com.dreamweb.apiserver.Entities.Post;
 import com.dreamweb.apiserver.Entities.TeamMemberEntity;
 import com.dreamweb.apiserver.Entities.User;
 import com.dreamweb.apiserver.Repositories.TeamMemberRepository;
@@ -12,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
 
 
 @Controller
@@ -39,5 +41,17 @@ public class UserController  {
         String password = user.getPassword();
         User returnUser = userRepository.findTopByEmailAndPassword(email,password);
         return returnUser;
+    }
+
+    @GetMapping(path = "/{id}")
+    @ResponseBody
+    public Optional<User> findById(@PathVariable long id){
+        return userRepository.findById(id);
+    }
+
+    @GetMapping(path = "/getall")
+    @ResponseBody
+    public Iterable<User> findAll(){
+        return userRepository.findAll();
     }
 }
