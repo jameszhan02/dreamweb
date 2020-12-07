@@ -9,7 +9,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import jwtAxios from "../axios";
 import {useHistory} from 'react-router-dom';
-import {onLogin, loginUser } from '../cookieHelper'
+import {onLogin, loginUser } from '../cookieHelper';
+import Alert from '@material-ui/lab/Alert';
 
 // function Copyright() {
 //   return (
@@ -77,22 +78,27 @@ export default function TestMoudleMemberList() {
 
   const handleSignIn = async () => {
       let user = { email: state.email, password: state.password }
-      let returnUser = await jwtAxios.post(`/user/signup`, user);
+      let returnUser = await jwtAxios.post(`/user/signin`, user);
       if(returnUser != null){
+        console.log("login Success!");
         setState({ logInSuccess: false, status: "" });
       }
       //put login user info in to the 
       if(state.logInSuccess){
         onLogin(returnUser);
       }
-
-      console.log(loginUser());
   }
 
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <br/>
+      <div>
+        {state.logInSuccess
+        ? <br/>
+        : <Alert severity="success">Login Success!!</Alert>
+        }
+      </div>
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
           {/* <LockOutlinedIcon /> */}
