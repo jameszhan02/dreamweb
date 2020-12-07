@@ -87,7 +87,9 @@ export default function TestMoudleMemberList() {
     } else {
       setState({ isMatch: false, status: "" });
       let user = { email: state.email, password: state.password }
-      return await jwtAxios.post(`/user/signup`, user)
+      await jwtAxios.post(`/user/signup`, user)
+      window.location.href = '/home'
+      return 'register success!'
     }
   };
 

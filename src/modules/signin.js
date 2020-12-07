@@ -87,6 +87,7 @@ export default function TestMoudleMemberList() {
       if(state.logInSuccess){
         console.log(returnUser);
         onLogin(returnUser);
+        window.location.href = '/home'
       }
   }
 
