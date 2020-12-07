@@ -44,7 +44,6 @@ const useStyles = makeStyles((theme) => ({
     container:{
       backgroundColor: "white"
     }
-  
   }));
 
 export default function UserData() {
