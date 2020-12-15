@@ -14,6 +14,7 @@ import Typography from "@material-ui/core/Typography";
 import jwtAxios from "../axios";
 import { useHistory } from "react-router-dom";
 import { loginUser } from "../cookieHelper/index";
+import Select from 'react-select';
 
 //MUST START WITH capital letter  (link below)
 //https://dev.to/ranewallin/js-bites-react-hook-is-called-in-a-function-which-is-neither-a-react-function-or-sic-a-custom-react-hook-1g2c
@@ -22,6 +23,7 @@ const NewPost = () => {
   const [content, setContent] = useState([]);
   const [title, setTitle] = useState([]);
   const [desc, setDesc] = useState([]);
+  const [cate, setCate] = useState([]);
   const mdParser = new MarkdownIt(/* Markdown-it options */);
   function handleEditorChange({ html, text }) {
     // console.log('handleEditorChange', html, text)
@@ -35,10 +37,21 @@ const NewPost = () => {
     // console.log(e.target.value);
     setDesc(e.target.value);
   };
+   const handleCatecChange = (e) => {
+    // console.log(e.target.value);
+    console.log("kj " + e.value);
+     setCate(e.value);
+  };
+  const options=[
+    {label:'Apartment',value:'apartment'},
+    {label:'Car', value:'car'},
+    {label:'Furnature', value:'furnature'}
+  ]
   const submitText = async () => {
     let post = {
       postTitle: title,
       postText: desc,
+      postCategory: cate,
       postUser: loginUser().data.id,
       postDate: Date.now(),
       postContent: content,
@@ -86,6 +99,19 @@ const NewPost = () => {
             style={{ paddingBottom: 5 }}
             onChange={handleDescChange}
           />
+          <Select options={options} onChange={handleCatecChange}>
+
+          </Select>
+           {/* <TextField
+            id="standard-basic"
+            label="Catelory"
+            variant="outlined"
+            color="primary"
+            fullWidth="true"
+            size="small"
+            style={{ paddingBottom: 5 }}
+            onChange={handleCatecChange}
+          /> */}
           <MdEditor
             style={{ minHeight: 250, padding: 10 }}
             renderHTML={(text) => mdParser.render(text)}

@@ -8,6 +8,11 @@ import Typography from "@material-ui/core/Typography";
 import { useHistory } from "react-router-dom";
 import { Button, CardActions } from "@material-ui/core";
 import { loginUser } from "../cookieHelper/index";
+import CategoryIcon from '@material-ui/icons/Category';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableRow from '@material-ui/core/TableRow';
 
 const PostList = () => {
   //get data
@@ -40,7 +45,7 @@ const PostList = () => {
     return history;
   };
   const formatDate = (date) => {
-    return new Date(date).toString();
+    return new Date(date).toLocaleString();
   };
   return (
     <div className="post-container">
@@ -60,17 +65,24 @@ const PostList = () => {
       {postlist.map((item, index) => {
         return (
           <Card className="post" style={{ width: "60%" }} key={index}>
-            <Typography
-              variant="caption"
-              display="block"
-              align="left"
-              gutterBottom
-            >
+            <Table>
+            <TableBody>
+              <TableRow>
+              <TableCell style={{paddingLeft:0}}>
+             
               {formatDate(item.postDate)}
-            </Typography>
+           
+              </TableCell>
+              <TableCell style={{textAlign: "right", fontWeight: 'bold', color: "purple"}}>
+              {item.postCategory}<CategoryIcon />
+              </TableCell>
+            </TableRow>
+            </TableBody>
+            </Table>
             <Typography variant="h6" align="left" color="primary">
               {item.postTitle}
             </Typography>
+           
             <Typography variant="body1" align="left">
               {item.postText}
             </Typography>
